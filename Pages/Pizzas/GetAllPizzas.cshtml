@@ -1,0 +1,21 @@
+﻿@page
+@model Pizza_StoreV1.GetAllPizzasModel
+@{ ViewData["Title"] = "GetAllPizzas"; }
+
+
+    <h1>GetAllPizzas</h1>
+    <h1 align="right"><a asp-page="CreatePizza">CreatePizza</a></h1>
+    
+<div class="card-deck">
+    @foreach (var p in Model.Pizzas.Values)
+    {
+<div class="card m-3" style="min-width: 18rem; max-width: 30.5%; height: 100%">
+    <div class="card-header">
+        <p> Name: @p.Name</p>
+        <p> Description: @p.Description</p>
+        <p> Price: @p.Price kr</p>
+        <img class="card-img-top img-thumbnail" height="200" src="~/Images/@p.ImageName" />
+    </div>
+</div>
+ }
+</div>
