@@ -27,8 +27,11 @@ namespace Pizza_StoreV1.Pages.Pizzas
         }
         public IActionResult OnPost()
         {
+            if (!ModelState.IsValid)
+            {
+                return Page();
+            }
             _catalog.AddPizza(Pizza); //Adding the pizza property
-
             return Redirect("GetAllPizzas");
         }
     }

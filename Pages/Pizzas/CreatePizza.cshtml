@@ -8,21 +8,28 @@
     <div class="form-group">
         <label asp-for="@Model.Pizza.Id" class="control-label"> Id </label>
         <input asp-for="@Model.Pizza.Id" class="form-control" />
-
-        <label asp-for="@Model.Pizza.Name" class="control-label"> Name </label>
-        <input asp-for="@Model.Pizza.Name" class="form-control" />
-
-        <label asp-for="@Model.Pizza.Description" class="control-label"> Description </label>
-        <input asp-for="@Model.Pizza.Description" class="form-control" />
-
-        <label asp-for="@Model.Pizza.ImageName" class="control-label"> ImageName </label>
-        <input asp-for="@Model.Pizza.ImageName" class="form-control" />
-
-        <label asp-for="@Model.Pizza.Price" class="control-label"> Price </label>
-        <input asp-for="@Model.Pizza.Price" class="form-control" />
+        <span asp-validation-for="@Model.Pizza.Id" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <input type="submit" value="Create"/>
+        <label asp-for="@Model.Pizza.Name" class="control-label">  </label>
+        <input asp-for="@Model.Pizza.Name" class="form-control" />
+        <span asp-validation-for="@Model.Pizza.Name" class="text-danger"></span>
     </div>
+    <div class="form-group">
+        <label asp-for="@Model.Pizza.Description" class="control-label"> Description </label>
+        <input asp-for="@Model.Pizza.Description" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label asp-for="@Model.Pizza.ImageName" class="control-label"> ImageName </label>
+        <input asp-for="@Model.Pizza.ImageName" class="form-control" />
+    </div>
+        <div class="form-group">
+            <label asp-for="@Model.Pizza.Price" class="control-label"> Price </label>
+            <input asp-for="@Model.Pizza.Price" class="form-control" />
+            <span asp-validation-for="@Model.Pizza.Price" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary btn-outline-primary" value="Create" />
+        </div>
 </form>
 
