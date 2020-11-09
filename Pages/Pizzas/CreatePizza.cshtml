@@ -1,10 +1,10 @@
 ﻿@page
 @model Pizza_StoreV1.Pages.Pizzas.CreatePizzaModel
-@{
+@{ ViewData["Title"] = "GetAllPizzas";
 }
 
 <form method="post">
-
+    <div class="col-md-4">
     <div class="form-group">
         <label asp-for="@Model.Pizza.Id" class="control-label"> Id </label>
         <input asp-for="@Model.Pizza.Id" class="form-control" />
@@ -23,13 +23,17 @@
         <label asp-for="@Model.Pizza.ImageName" class="control-label"> ImageName </label>
         <input asp-for="@Model.Pizza.ImageName" class="form-control" />
     </div>
-        <div class="form-group">
-            <label asp-for="@Model.Pizza.Price" class="control-label"> Price </label>
-            <input asp-for="@Model.Pizza.Price" class="form-control" />
-            <span asp-validation-for="@Model.Pizza.Price" class="text-danger"></span>
-        </div>
-        <div class="form-group">
-            <input type="submit" class="btn btn-primary btn-outline-primary" value="Create" />
-        </div>
+    <div class="form-group">
+        <label asp-for="@Model.Pizza.Price" class="control-label"> Price </label>
+        <input asp-for="@Model.Pizza.Price" class="form-control" />
+        <span asp-validation-for="@Model.Pizza.Price" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <input type="submit" class="btn btn-primary btn-outline-primary" value="Create" />
+    </div>
+    </div>
 </form>
+<div>
+    <a asp-page="GetAllPizzas">Back to Pizza List</a>
+</div>
 

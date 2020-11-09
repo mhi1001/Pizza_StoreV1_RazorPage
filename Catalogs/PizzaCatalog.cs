@@ -44,5 +44,36 @@ namespace Pizza_StoreV1.PizzaCatalogs
         {
             pizzas.Add(pizza.Id, pizza);
         }
+
+        public Pizza GetPizza(int id)
+        {
+            foreach (Pizza p in pizzas.Values)
+            {
+                if (id == p.Id)
+                {
+                    return p;
+                }
+            }
+            return new Pizza();
+        }
+
+        public void UpdatePizza(Pizza @p)
+        {
+            if (@p != null)
+            {
+                foreach (Pizza pizza in pizzas.Values)
+                {
+                    if (pizza.Id == @p.Id)
+                    {
+                        pizza.Id = @p.Id;
+                        pizza.Name = @p.Name;
+                        pizza.ImageName = @p.ImageName;
+                        pizza.Description = @p.Description;
+                        pizza.Price = @p.Price;
+                    }
+                }
+
+            }
+        }
     }
 }

@@ -4,7 +4,7 @@
 
 
     <h1>GetAllPizzas</h1>
-    <h1 align="right"><a asp-page="CreatePizza">CreatePizza</a></h1>
+    <h1 align="left"><a asp-page="CreatePizza">CreatePizza</a></h1>
     
 <div class="card-deck">
     @foreach (var p in Model.Pizzas.Values)
@@ -15,6 +15,7 @@
         <p> Description: @p.Description</p>
         <p> Price: @p.Price kr</p>
         <img class="card-img-top img-thumbnail" height="200" src="~/Images/@p.ImageName" />
+        <a asp-page="EditPizza" asp-route-id="@p.Id">Edit</a>
     </div>
 </div>
  }
