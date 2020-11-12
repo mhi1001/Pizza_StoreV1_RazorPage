@@ -16,7 +16,7 @@ namespace Pizza_StoreV1.Pages.Pizzas
         [BindProperty]
         public Pizza Pizza { get; set; }
 
-        public CreatePizzaModel()
+        public CreatePizzaModel() 
         {
             _catalog = PizzaCatalog.Instance;//Singleton Design Pattern (initialize it or create new if null (check the method in the class)
         }

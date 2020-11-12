@@ -74,6 +74,8 @@ namespace Pizza_StoreV1.PizzaCatalogs
                 }
 
             }
+
+            //pizzas[@p.Id] = @p;
         }
     }
 }
