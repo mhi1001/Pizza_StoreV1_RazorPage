@@ -23,7 +23,7 @@ namespace Pizza_StoreV1
         public IActionResult OnGet()
         {
            Pizzas = _catalog.AllPizzas(); //Singleton Design Pattern
-            return Page();
+           return Page();
         }
     }
 }

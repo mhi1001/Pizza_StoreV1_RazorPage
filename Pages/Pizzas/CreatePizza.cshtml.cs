@@ -21,6 +21,7 @@ namespace Pizza_StoreV1.Pages.Pizzas
             _catalog = PizzaCatalog.Instance;//Singleton Design Pattern (initialize it or create new if null (check the method in the class)
         }
         
+        
         public void OnGet()
         {
 
@@ -31,6 +32,8 @@ namespace Pizza_StoreV1.Pages.Pizzas
             {
                 return Page();
             }
+
+
             _catalog.AddPizza(Pizza); //Adding the pizza property
             return Redirect("GetAllPizzas");
         }

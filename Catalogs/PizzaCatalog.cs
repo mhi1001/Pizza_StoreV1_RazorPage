@@ -59,23 +59,23 @@ namespace Pizza_StoreV1.PizzaCatalogs
 
         public void UpdatePizza(Pizza @p)
         {
-            if (@p != null)
-            {
-                foreach (Pizza pizza in pizzas.Values)
-                {
-                    if (pizza.Id == @p.Id)
-                    {
-                        pizza.Id = @p.Id;
-                        pizza.Name = @p.Name;
-                        pizza.ImageName = @p.ImageName;
-                        pizza.Description = @p.Description;
-                        pizza.Price = @p.Price;
-                    }
-                }
+            //if (@p != null)
+            //{
+            //    foreach (Pizza pizza in pizzas.Values)
+            //    {
+            //        if (pizza.Id == @p.Id)
+            //        {
+            //            pizza.Id = @p.Id;
+            //            pizza.Name = @p.Name;
+            //            pizza.ImageName = @p.ImageName;
+            //            pizza.Description = @p.Description;
+            //            pizza.Price = @p.Price;
+            //        }
+            //    }
 
-            }
+            //}
 
-            //pizzas[@p.Id] = @p;
+            pizzas[@p.Id] = @p;
         }
     }
 }
