@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json.Bson;
 using Pizza_StoreV1.Interfaces;
 using Pizza_StoreV1.Models;
-using Pizza_StoreV1.PizzaCatalogs;
 
 namespace Pizza_StoreV1.Pages.Pizzas
 {

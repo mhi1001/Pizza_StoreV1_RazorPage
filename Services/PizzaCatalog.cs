@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Pizza_StoreV1.Interfaces;
 
-namespace Pizza_StoreV1.PizzaCatalogs
+namespace Pizza_StoreV1.Services
 {
     public class PizzaCatalog : IPizzaRepository
     {

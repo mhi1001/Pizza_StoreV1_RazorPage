@@ -9,7 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Pizza_StoreV1.Interfaces;
-using Pizza_StoreV1.PizzaCatalogs;
+using Pizza_StoreV1.Services;
 
 namespace Pizza_StoreV1
 {
