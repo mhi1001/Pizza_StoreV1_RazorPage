@@ -3,15 +3,16 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Pizza_StoreV1.Interfaces;
 
 namespace Pizza_StoreV1.PizzaCatalogs
 {
-    public class PizzaCatalog
+    public class PizzaCatalog : IPizzaRepository
     {
-        private static PizzaCatalog _instance;//Singleton Design Pattern
+        
         private Dictionary<int, Pizza> pizzas { get; }
 
-        private PizzaCatalog()//Singleton Design Pattern - changed it to private
+        public PizzaCatalog() //removed every change done for the singleton and this class inherits the new Interface
         {
             pizzas = new Dictionary<int, Pizza>();
             pizzas.Add(1, new Pizza() { Id = 1, Name = "Cheese_pizza", Description = " Made of cheese", Price = 98, ImageName = "Cheeze_pizza.jfif" });
@@ -27,18 +28,7 @@ namespace Pizza_StoreV1.PizzaCatalogs
             return pizzas;
         }
 
-        public static PizzaCatalog Instance //Singleton Design Pattern added Instance Property if its null it will create a new if not it will use the current one
-        {
-            get
-            {
-                if (_instance == null)
-                {
-                    _instance = new PizzaCatalog();
-                }
-
-                return _instance;
-            }
-        }
+   
 
         public void AddPizza(Pizza pizza)
         {
@@ -71,13 +61,13 @@ namespace Pizza_StoreV1.PizzaCatalogs
             pizzas.Remove(id);
         }
 
-        public Dictionary<int, Pizza> FilterPizzas(string Criteria)
+        public Dictionary<int, Pizza> FilterPizzas(string criteria)
         {
             Dictionary<int, Pizza> emptyDictionary = new Dictionary<int, Pizza>();
 
             foreach (Pizza p in pizzas.Values)
             {
-                if (p.Name.StartsWith(Criteria))
+                if (p.Name.StartsWith(criteria))
                 {
                     emptyDictionary.Add(p.Id, p);
                 }

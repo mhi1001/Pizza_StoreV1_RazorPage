@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Pizza_StoreV1.Interfaces;
 using Pizza_StoreV1.Models;
 using Pizza_StoreV1.PizzaCatalogs;
 
@@ -12,16 +13,21 @@ namespace Pizza_StoreV1.Pages.Pizzas
 {
     public class CreatePizzaModel : PageModel
     {
-        private PizzaCatalog _catalog;//Singleton Design Pattern, define it in every model that will need to call the PizzaCatalog class
+
         [BindProperty]
         public Pizza Pizza { get; set; }
 
-        public CreatePizzaModel() 
+        private IPizzaRepository _catalog; //create the interface reference
+
+        public CreatePizzaModel(IPizzaRepository repository) //inject the interface created
         {
-            _catalog = PizzaCatalog.Instance;//Singleton Design Pattern (initialize it or create new if null (check the method in the class)
+            _catalog = repository;//And lastly Use this IPizzaRepository "repository" parameter to initialize the 
+                                  // reference(named _catalog)
+                                  //And then proceed to use the methods as we used to since 
+                                  //did not changed the variable name 
         }
-        
-        
+
+
         public void OnGet()
         {
 
@@ -36,6 +42,7 @@ namespace Pizza_StoreV1.Pages.Pizzas
 
             _catalog.AddPizza(Pizza); //Adding the pizza property
             return Redirect("GetAllPizzas");
+
         }
     }
 }
