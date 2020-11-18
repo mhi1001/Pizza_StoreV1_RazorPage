@@ -1,0 +1,36 @@
+﻿@page
+@model Pizza_StoreV1.Pages.Pizzas.DeletePizzaModel
+@{
+}
+<h1> Delete Pizza </h1>
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div class="form-group">
+                <label asp-for="@Model.Pizza.Id" class="control-label">ID - @Model.Pizza.Id </label>
+               </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Pizza.Name" class="control-label">Name - @Model.Pizza.Name </label>
+            </div>
+
+            <div class="form-group">
+                <label asp-for="@Model.Pizza.Description" class="control-label">Description - @Model.Pizza.Description </label>
+                
+            </div>
+            <div class="form-group">
+                <img class="card-img-top img-thumbnail" height="200" src="~/Images/@Model.Pizza.ImageName" />
+            </div>
+            <div class="form-group">
+                <label asp-for="@Model.Pizza.Price" class="control-label">Price - @Model.Pizza.Price kr </label>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" class="btn btn-danger" value="Delete" />
+            </div>
+        </form>
+        <div>
+            <a asp-page="GetAllPizzas">Back to Pizza List</a>
+        </div>
+    </div>
+</div>

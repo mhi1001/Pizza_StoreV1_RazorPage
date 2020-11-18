@@ -79,5 +79,10 @@ namespace Pizza_StoreV1.PizzaCatalogs
 
             //pizzas[@p.Id] = @p;
         }
+
+        public void RemovePizza(int id)
+        {
+            pizzas.Remove(id);
+        }
     }
 }
