@@ -14,6 +14,9 @@ namespace Pizza_StoreV1
     {
         private PizzaCatalog _catalog; //Singleton Design Pattern  define it in every model that will need to call the PizzaCatalog class
         public Dictionary<int, Pizza> Pizzas { get; set; }
+        [BindProperty(SupportsGet = true)]
+        public String FilterCriteria { get; set; }
+        
 
         public GetAllPizzasModel()
         {
@@ -22,8 +25,15 @@ namespace Pizza_StoreV1
 
         public IActionResult OnGet()
         {
-           Pizzas = _catalog.AllPizzas(); //Singleton Design Pattern
-           return Page();
+            if (!string.IsNullOrEmpty(FilterCriteria))
+            {
+                Pizzas = _catalog.FilterPizzas(FilterCriteria);
+            }
+            else
+            {
+                Pizzas = _catalog.AllPizzas(); //Singleton Design Pattern
+            }
+            return Page();
         }
     }
 }

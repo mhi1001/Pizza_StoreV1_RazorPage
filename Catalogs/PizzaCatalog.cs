@@ -57,32 +57,33 @@ namespace Pizza_StoreV1.PizzaCatalogs
             return new Pizza();
         }
 
-        public void UpdatePizza(int id,Pizza @p)
+        public void UpdatePizza(int id, Pizza @p)
         {
             if (@p != null)
             {
-                //foreach (Pizza pizza in pizzas.Values)
-                //{
-                //    if (pizza.Id == id)
-                //    {
-                //        //pizza.Id = @p.Id;
-                //        //pizza.Name = @p.Name;
-                //        //pizza.ImageName = @p.ImageName;
-                //        //pizza.Description = @p.Description;
-                //        //pizza.Price = @p.Price;
-                //        pizzas[id] = @p;
-                //    }
-                //}
                 pizzas[id] = @p;
 
             }
-
-            //pizzas[@p.Id] = @p;
         }
 
         public void RemovePizza(int id)
         {
             pizzas.Remove(id);
+        }
+
+        public Dictionary<int, Pizza> FilterPizzas(string Criteria)
+        {
+            Dictionary<int, Pizza> emptyDictionary = new Dictionary<int, Pizza>();
+
+            foreach (Pizza p in pizzas.Values)
+            {
+                if (p.Name.StartsWith(Criteria))
+                {
+                    emptyDictionary.Add(p.Id, p);
+                }
+            }
+
+            return emptyDictionary;
         }
     }
 }

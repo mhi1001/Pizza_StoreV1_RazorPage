@@ -10,9 +10,17 @@
 
 
 
-<div class="d-flex justify-content-between">
-    <h1>List Pizzas</h1>
-    <h1><a asp-page="CreatePizza">Create New Pizza</a></h1>
+<div class="d-flex justify-content-between row">
+    <h1 class="col-sm">List Pizzas Page</h1>
+    <div class="col-sm">
+        <form class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <input type="text" class="form-control " asp-for="@Model.FilterCriteria">
+            </div>
+            <button type="submit" class="btn btn-primary mb-2">Filter</button>
+        </form>
+    </div>
+    <h1 class="col-sm"><a asp-page="CreatePizza">Create New Pizza</a></h1>
 </div>
 
 <div class="card-deck">
