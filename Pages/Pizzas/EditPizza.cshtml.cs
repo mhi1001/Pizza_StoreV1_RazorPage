@@ -21,7 +21,7 @@ namespace Pizza_StoreV1.Pages.Pizzas
         {
                 _catalog = PizzaCatalog.Instance;
         }
-        public IActionResult OnGet(int id) ///ID (OnPOST method can bind automatically the querystring (in this case Id=??)
+        public IActionResult OnGet(int id) //ID (OnPOST method can bind automatically the querystring (in this case Id=??)
         {
             Pizza = _catalog.GetPizza(id);
             return Page();

@@ -61,17 +61,19 @@ namespace Pizza_StoreV1.PizzaCatalogs
         {
             if (@p != null)
             {
-                foreach (Pizza pizza in pizzas.Values)
-                {
-                    if (pizza.Id == id)
-                    {
-                        pizza.Id = @p.Id;
-                        pizza.Name = @p.Name;
-                        pizza.ImageName = @p.ImageName;
-                        pizza.Description = @p.Description;
-                        pizza.Price = @p.Price;
-                    }
-                }
+                //foreach (Pizza pizza in pizzas.Values)
+                //{
+                //    if (pizza.Id == id)
+                //    {
+                //        //pizza.Id = @p.Id;
+                //        //pizza.Name = @p.Name;
+                //        //pizza.ImageName = @p.ImageName;
+                //        //pizza.Description = @p.Description;
+                //        //pizza.Price = @p.Price;
+                //        pizzas[id] = @p;
+                //    }
+                //}
+                pizzas[id] = @p;
 
             }
 

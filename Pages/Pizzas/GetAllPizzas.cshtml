@@ -16,6 +16,7 @@
         <p> Price: @p.Price kr</p>
         <img class="card-img-top img-thumbnail" height="200" src="~/Images/@p.ImageName" />
         <a asp-page="EditPizza" asp-route-id="@p.Id">Edit</a>
+        <a asp-page="DeletePizza" asp-route-id="@p.Id">Delete</a>
     </div>
 </div>
  }
