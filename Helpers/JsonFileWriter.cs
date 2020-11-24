@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Pizza_StoreV1.Models;
+using Newtonsoft.Json;
 
 namespace Pizza_StoreV1.Helpers
 {
@@ -11,7 +12,7 @@ namespace Pizza_StoreV1.Helpers
     {
         public static void WriteToJson(Dictionary<int, Pizza> pizzas, string jSonFilePath)
         {
-            string output = Newtonsoft.Json.JsonConvert.SerializeObject(pizzas, Newtonsoft.Json.Formatting.Indented);
+            string output = JsonConvert.SerializeObject(pizzas, Newtonsoft.Json.Formatting.Indented);
             File.WriteAllText(jSonFilePath, output);
         }
     }
