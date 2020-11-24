@@ -12,7 +12,7 @@ namespace Pizza_StoreV1.Helpers
     {
         public static void WriteToJson(Dictionary<int, Pizza> pizzas, string jSonFilePath)
         {
-            string output = JsonConvert.SerializeObject(pizzas, Newtonsoft.Json.Formatting.Indented);
+            string output = JsonConvert.SerializeObject(pizzas, Formatting.Indented);
             File.WriteAllText(jSonFilePath, output);
         }
     }
