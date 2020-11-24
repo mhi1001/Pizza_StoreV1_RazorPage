@@ -2,9 +2,9 @@
   "1": {
     "Id": 1,
     "Name": "Cheese Pizza",
-    "Description": " alot of cheese",
+    "Description": "a lot of cheese",
     "Price": 77.0,
-    "ImageName": "Cheese_pizza.jfif"
+    "ImageName": "Cheeze_pizza.jfif"
   },
   "2": {
     "Id": 2,
@@ -12,5 +12,12 @@
     "Description": "a lot of vegetables",
     "Price": 66.0,
     "ImageName": "Vegetable_pizza.jfif"
+  },
+  "3": {
+    "Id": 3,
+    "Name": "CoolPizza",
+    "Description": "MegaCoolPizza",
+    "Price": 1000.0,
+    "ImageName": "Mozzarella_pizza.jfif"
   }
-} 
+}

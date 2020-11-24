@@ -9,7 +9,7 @@ namespace Pizza_StoreV1.Interfaces
     public interface IPizzaRepository //Service Injection first step- create interface with all of
                                         //the catalog methods
     {
-        public Dictionary<int, Pizza> AllPizzas();
+        public Dictionary<int, Pizza> GetAllPizzas();
         public void AddPizza(Pizza pizza);
         public Pizza GetPizza(int id);
         public void UpdatePizza(int id, Pizza @p);

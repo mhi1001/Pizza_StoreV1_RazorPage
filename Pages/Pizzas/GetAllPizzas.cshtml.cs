@@ -30,7 +30,7 @@ namespace Pizza_StoreV1
             }
             else
             {
-                Pizzas = _catalog.AllPizzas(); //Singleton Design Pattern
+                Pizzas = _catalog.GetAllPizzas(); //Singleton Design Pattern
             }
             return Page();
         }

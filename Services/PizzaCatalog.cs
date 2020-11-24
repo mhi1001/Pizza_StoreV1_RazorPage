@@ -23,7 +23,7 @@ namespace Pizza_StoreV1.Services
         }
 
 
-        public Dictionary<int, Pizza> AllPizzas()
+        public Dictionary<int, Pizza> GetAllPizzas()
         {
             return Pizzas;
         }

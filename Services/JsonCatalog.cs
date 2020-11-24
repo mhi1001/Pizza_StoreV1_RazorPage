@@ -16,17 +16,21 @@ namespace Pizza_StoreV1.Services
         
         public JsonCatalog()
         {
-            Pizzas = AllPizzas();
+            
         }
 
-        public Dictionary<int, Pizza> AllPizzas()
+        public Dictionary<int, Pizza> GetAllPizzas()
         {
-            Pizzas = JsonFileReader.ReadJson(filePath);
-            return Pizzas;
+            return JsonFileReader.ReadJson(filePath);
         }
 
         public void AddPizza(Pizza pizza)
         {
+            //Created a dictionary that calls the GetAllPizzas so it populates it with the existing pizzas.
+            //then we add the new pizza to it, and then afterwards write to Json the created dictionary (existingPizzas)
+            //Dictionary<int, Pizza> existingPizzas = GetAllPizzas();
+            Pizzas = GetAllPizzas();
+
             Pizzas.Add(pizza.Id,pizza);
             JsonFileWriter.WriteToJson(Pizzas,filePath);
         }

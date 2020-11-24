@@ -27,10 +27,10 @@ namespace Pizza_StoreV1
         {
             services.AddRazorPages().AddRazorRuntimeCompilation();
             services.AddRazorPages();
-            services.AddSingleton<IPizzaRepository, PizzaCatalog>(); //Add a singleton for our catalog and interface
+            //services.AddSingleton<IPizzaRepository, PizzaCatalog>(); //Add a singleton for our catalog and interface
                                                                     //register the IPizzaRepository 
                                                                     //as a singleton service having PizzaCatalog as the implementation
-            //services.AddSingleton<PizzaJsonCatalog>();
+            services.AddSingleton<IPizzaRepository, JsonCatalog>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
