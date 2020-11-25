@@ -19,5 +19,12 @@
     "Description": "MegaCoolPizza",
     "Price": 1000.0,
     "ImageName": "Mozzarella_pizza.jfif"
+  },
+  "4": {
+    "Id": 4,
+    "Name": "PogPizza",
+    "Description": "Cata & PogChamp",
+    "Price": 999.0,
+    "ImageName": "1.png"
   }
 }
